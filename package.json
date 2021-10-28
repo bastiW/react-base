@@ -8,6 +8,6 @@
     "apply": "^0.2"
   },
   "dependencies": {
-    "i18next": "6.0.0"
+    "i18next": "21.3.3"
   }
 }
