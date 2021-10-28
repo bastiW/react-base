@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "Home", 
+    "about": "About",
+    "menu": "Menu"
+  },
+  "projectName": "{{ projectName }}",
+  "error": {
+    "title": "Ooops!",
+    "description": "An error occured:",
+    "backToHome": "Back to Home",
+    "server": "Status Code from server: {{code}}",
+    "gqlErr": "Follow these instuctions from server:"
+  },
+  "home": {
+    "fields": "Here's some example field data retrieved by a gql query:",
+    "name": "Name",
+    "btnText": "Show Message",
+    "mutation": "Example of a mutation, posts a name and returns it"
+  },
+  "fieldCard": {
+    "humidity": "Ground Humidity"
+  }
+}

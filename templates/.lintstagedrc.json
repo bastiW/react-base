@@ -1,0 +1,4 @@
+{
+  "*.{ts,tsx,js,jsx}": ["yarn run lint:fix"],
+  "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": ["prettier --write"]
+}

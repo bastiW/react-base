@@ -1,0 +1,9 @@
+**/public
+**/.eslintrc.js
+**/node_modules
+**/husky
+**/jest
+**/dist
+**/*.html
+**/*.yml
+src/generated/graphql.tsx

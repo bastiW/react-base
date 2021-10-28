@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "Start",
+    "about": "Über",
+    "menu": "Menü"
+  },
+  "projectName": "{{ projectName }}",
+  "error": {
+    "title": "Ups!",
+    "description": "Es ist ein Fehler aufgetreten:",
+    "backToHome": "Zurück zur Startseite",
+    "server": "Status Code des Servers: {{code}}",
+    "gqlErr": "Folgen Sie diesen Server-Anweisungen:"
+  },
+  "home": {
+    "fields": "Beispielfelder, die über GQL-Query abgefragt wurden:",
+    "name": "Name",
+    "btnText": "Nachricht anzeigen",
+    "mutation": "Beispiel-Mutation: postet einen Namen und gibt diesen zurück"
+  },
+  "fieldCard": {
+    "humidity": "Bodenfeuchte"
+  }
+}
