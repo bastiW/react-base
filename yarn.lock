@@ -465,10 +465,10 @@ human-signals@^1.1.1:
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-1.1.1.tgz#c5b1cd14f50aeae09ab6c59fe63ba3395fe4dfa3"
   integrity sha512-SEQu7vl8KjNL2eoGBLF3+wAjpsNfA9XMlXAYj/3EdaNfAlxKthD1xjEQfGOUhllCGGJVNY34bRr6lPINhNjyZw==
 
-i18next@6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/i18next/-/i18next-6.0.0.tgz#fb3c9e61d236052e63c86b6073ee01bdf0f2b1ba"
-  integrity sha1-+zyeYdI2BS5jyGtgc+4BvfDysbo=
+i18next@6.1.2:
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/i18next/-/i18next-6.1.2.tgz#8d09e2b77e59099db54f1cffd03a80b3e428c85a"
+  integrity sha1-jQnit35ZCZ21Txz/0DqAs+QoyFo=
 
 import-fresh@^3.2.1:
   version "3.3.0"
