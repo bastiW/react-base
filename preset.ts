@@ -1,4 +1,5 @@
 import { Preset } from 'apply';
+import { dependency, DependencyName } from './depdendencies';
 
 // This would be easier to move to a template. I used a function just to test how the editing of existing files works.
 function addLegacy() {
@@ -20,12 +21,20 @@ function addLegacy() {
   });
 }
 
+function addPackage(name: DependencyName) {
+  return Preset.editNodePackages().add(...dependency(name));
+}
+
+function addDevPackage(name: DependencyName) {
+  return Preset.editNodePackages().add(...dependency(name));
+}
+
 function addI18next() {
-  Preset.editNodePackages()
-    .add('i18next', '^20.6.1')
-    .add('i18next-browser-languagedetector', '^6.1.2')
-    .add('i18next-http-backend', '^1.3.1')
-    .add('react-i18next', '^11.12.0');
+  addPackage('i18next');
+  addPackage('i18next-browser-languagedetector');
+
+  addPackage('i18next-http-backend')
+  addPackage('react-i18next');
 
   Preset.edit(['public/locales/de/translation.json', 'public/locales/en/translation.json']).replaceVariables(({ prompts }) => ({
     projectName: prompts.projectName,
@@ -33,17 +42,16 @@ function addI18next() {
 }
 
 function addLintAndPrettier() {
-  Preset.editNodePackages()
-    .addDev('@typescript-eslint/eslint-plugin', '')
-    .addDev('@typescript-eslint/parser', '^4.31.1')
-    .addDev('eslint', '^7.32.0')
-    .addDev('eslint-config-prettier', '^8.3.0')
-    .addDev('eslint-plugin-prettier', '^4.0.0')
-    .addDev('eslint-plugin-jsx-a11y', '^6.4.1')
-    .addDev('eslint-plugin-react', '^7.25.3')
-    .addDev('eslint-config-prettier', '^8.3.0')
-    .addDev('eslint-plugin-prettier', '^4.0.0')
-    .addDev('prettier', '^2.4.1');
+    addDevPackage('@typescript-eslint/eslint-plugin')
+    addDevPackage('@typescript-eslint/parser')
+    addDevPackage('eslint')
+    addDevPackage('eslint-config-prettier')
+    addDevPackage('eslint-plugin-prettier')
+    addDevPackage('eslint-plugin-jsx-a11y')
+    addDevPackage('eslint-plugin-react')
+    addDevPackage('eslint-config-prettier')
+    addDevPackage('eslint-plugin-prettier')
+    addDevPackage('prettier')
   Preset.editJson('package.json').merge({
     scripts: {
       lint: 'eslint . --ext .js,.jsx,.ts,.tsx --quiet',
@@ -57,7 +65,8 @@ function addLintAndPrettier() {
 }
 
 function addFormatOnCommit() {
-  Preset.editNodePackages().addDev('husky', '^7.0.2').addDev('lint-staged', '^11.1.2');
+  addDevPackage('husky')
+  addDevPackage('lint-staged')
 
   Preset.editJson('package.json').merge({
     scripts: {
@@ -72,7 +81,7 @@ function addFormatOnCommit() {
 }
 
 function addBasicRouter() {
-  Preset.editNodePackages().add('react-router-dom', '^5.3.0');
+  addPackage('react-router-dom')
 }
 
 function runFormatCode() {
@@ -81,18 +90,17 @@ function runFormatCode() {
 
 function addTesting() {
   Preset.editNodePackages()
-    .addDev('@babel/core', '^7.15.5')
-    .addDev('@testing-library/dom', '^8.10.1')
-    .addDev('@testing-library/jest-dom', '^5.14.1')
-    .addDev('@testing-library/react', '^12.1.2')
-    .addDev('@testing-library/user-event', '^13.5.0')
-    .addDev('babel-jest', '^27.2.0')
-    .addDev('jest', '^27.2.0')
-    .addDev('jest-transform-stub', '^2.0.0')
-    .addDev('jest-watch-typeahead', '^0.6.4')
-    .addDev('eslint-plugin-jest', '^24.5.2')
-    .addDev('babel-preset-react-app', "^10.0.0");
-
+    addDevPackage('@babel/core')
+    addDevPackage('@testing-library/dom')
+    addDevPackage('@testing-library/jest-dom')
+    addDevPackage('@testing-library/react')
+    addDevPackage('@testing-library/user-event')
+    addDevPackage('babel-jest')
+    addDevPackage('jest')
+    addDevPackage('jest-transform-stub')
+    addDevPackage('jest-watch-typeahead')
+    addDevPackage('eslint-plugin-jest')
+    addDevPackage('babel-preset-react-app')
 
   Preset.editJson('package.json').merge({
     jest: {
