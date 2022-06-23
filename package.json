@@ -15,7 +15,7 @@
     "eslint-plugin-react": "7.26.1",
     "prettier": "2.4.1",
     "@babel/core": "7.16.0",
-    "@testing-library/dom": "8.10.1",
+    "@testing-library/dom": "8.14.0",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "12.1.2",
     "@testing-library/user-event": "13.5.0",
